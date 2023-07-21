@@ -18,7 +18,7 @@ class Movie
 
     public function getDescription()
     {
-        return $this->type . ": " . $this->plot . ".";
+        return "Descrizione: " . $this->type . "=> " . $this->plot . ".";
     }
 
     public function getMovieDuration()
@@ -26,6 +26,9 @@ class Movie
         return "Durata del Film: " . $this->duration . " circa";
     }
 }
+$first_film = new Movie("Avengers:Infinity War", "3:00:00", "USA", "Lorem ipsum Thanos fecit dolor a muy part of the universo.....", "Action");
+$second_film = new Movie("Io sono Leggenda", "2:30:00", "USA", "Lorem ipsum Will Smith and the dog fecit danni.....", "Action");
+$movies = [$first_film, $second_film];
 ?>
 
 <!DOCTYPE html>
