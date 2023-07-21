@@ -26,6 +26,30 @@ class Movie
         return "Durata del Film: " . $this->duration . " circa";
     }
 }
+
+class Person
+{
+    public $name;
+    public $surname;
+    public $age;
+
+    public function __construct($name, $surname, $age)
+    {
+        $this->name = $name;
+        $this->surname = $surname;
+        $this->age = $age;
+    }
+
+    public function getFullName()
+    {
+        return $this->name . " " . $this->surname;
+    }
+
+    public function getPersonInfo()
+    {
+        return $this->getFullName() . " " . $this->age . " anni";
+    }
+}
 $first_film = new Movie("Avengers:Infinity War", "3:00:00", "USA", "Lorem ipsum Thanos fecit dolor a muy part of the universo.....", "Action");
 $second_film = new Movie("Io sono Leggenda", "2:30:00", "USA", "Lorem ipsum Will Smith and the dog fecit danni.....", "Action");
 $movies = [$first_film, $second_film];
