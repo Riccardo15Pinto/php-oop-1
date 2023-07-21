@@ -6,14 +6,16 @@ class Movie
     public $country;
     public $plot;
     public $type;
+    public $cast = "/n";
 
-    public function __construct($name, $duration, $country, $plot, $type)
+    public function __construct($name, $duration, $country, $plot, $type, Person $cast)
     {
         $this->name = $name;
         $this->duration = $duration;
         $this->country = $country;
         $this->plot = $plot;
         $this->type = $type;
+        $this->cast = $cast;
     }
 
     public function getMovieDescription()
@@ -50,8 +52,8 @@ class Person
         return $this->getFullName() . " " . $this->age . " anni";
     }
 }
-$first_film = new Movie("Avengers:Infinity War", "3:00:00", "USA", "Lorem ipsum Thanos fecit dolor a muy part of the universo.....", "Action");
-$second_film = new Movie("Io sono Leggenda", "2:30:00", "USA", "Lorem ipsum Will Smith and the dog fecit danni.....", "Action");
+$first_film = new Movie("Avengers:Infinity War", "3:00:00", "USA", "Lorem ipsum Thanos fecit dolor a muy part of the universo.....", "Action", new Person("Thanos", "Campanaros", "300"));
+$second_film = new Movie("Io sono Leggenda", "2:30:00", "USA", "Lorem ipsum Will Smith and the dog fecit danni.....", "Action", new Person("will", "Smith", "57"));
 $movies = [$first_film, $second_film];
 ?>
 
@@ -68,10 +70,12 @@ $movies = [$first_film, $second_film];
     <ul>
         <?php foreach ($movies as $movie) : ?>
             <li>
-                <h1><?= $movie->name ?></h1>
-                <h2><?= $movie->country ?></h2>
+                <h1>Titolo: <?= $movie->name ?></h1>
+                <h2>Nazionalità: <?= $movie->country ?></h2>
                 <h3><?= $movie->getMovieDescription() ?></h3>
                 <h4><?= $movie->getMovieDuration() ?></h4>
+                <h4>Cast: <?= $movie->cast->getPersonInfo() ?></h4>
+
             </li>
         <?php endforeach ?>
     </ul>
