@@ -1,5 +1,12 @@
 <?php
-
+class Movie
+{
+    public $name;
+    public $duration;
+    public $country;
+    public $plot;
+    public $type;
+}
 ?>
 
 <!DOCTYPE html>
