@@ -2,10 +2,19 @@
 class Movie
 {
     public $name;
-    public $duration;
+    public $duration = "1:45:00";
     public $country;
     public $plot;
     public $type;
+
+    public function __construct($name, $duration, $country, $plot, $type)
+    {
+        $this->name = $name;
+        $this->duration = $duration;
+        $this->country = $country;
+        $this->plot = $plot;
+        $this->type = $type;
+    }
 }
 ?>
 
