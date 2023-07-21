@@ -16,7 +16,7 @@ class Movie
         $this->type = $type;
     }
 
-    public function getDescription()
+    public function getMovieDescription()
     {
         return "Descrizione: " . $this->type . "=> " . $this->plot . ".";
     }
@@ -41,7 +41,16 @@ $movies = [$first_film, $second_film];
 </head>
 
 <body>
-    <h1>weee</h1>
+    <ul>
+        <?php foreach ($movies as $movie) : ?>
+            <li>
+                <h1><?= $movie->name ?></h1>
+                <h2><?= $movie->country ?></h2>
+                <h3><?= $movie->getMovieDescription() ?></h3>
+                <h4><?= $movie->getMovieDuration() ?></h4>
+            </li>
+        <?php endforeach ?>
+    </ul>
 </body>
 
 </html>
