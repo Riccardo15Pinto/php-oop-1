@@ -18,7 +18,7 @@ class Movie
 
     public function getMovieDescription()
     {
-        return "Descrizione: " . $this->type . "=> " . $this->plot . ".";
+        return "Descrizione: " . $this->type . " => " . $this->plot . ".";
     }
 
     public function getMovieDuration()
