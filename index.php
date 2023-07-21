@@ -15,6 +15,16 @@ class Movie
         $this->plot = $plot;
         $this->type = $type;
     }
+
+    public function getDescription()
+    {
+        return $this->type . ": " . $this->plot . ".";
+    }
+
+    public function getMovieDuration()
+    {
+        return "Durata del Film: " . $this->duration . " circa";
+    }
 }
 ?>
 
